@@ -1,0 +1,6 @@
+1695614060110	Rename field 'tokens'
+1695614223843	Rename field 'operatorTokens'
+1695614328676	Rename field 'maxCommentsAllowed'
+1695614367975	Rename field 'howManyCommentsFound'
+1695615061197	Rename type 'NumberOfOperators'
+1695615247334	Rename type 'NumberOfOperatorsCheck'

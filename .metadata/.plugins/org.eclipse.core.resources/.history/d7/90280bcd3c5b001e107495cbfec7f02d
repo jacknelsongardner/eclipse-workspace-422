@@ -1,0 +1,4 @@
+MyCustomChecks.desc =  Demo in class check
+
+SemiColons.name = Semi Colon checker
+SemiColons.desc = Semi Colon Checker Description in-class

@@ -1,0 +1,4 @@
+ask.before.rebuild=prompt
+eclipse.preferences.version=1
+open.module.editor.on.add=true
+warn.before.losing.filesets=true

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="net.sf.eclipsecs.ui.stats.views.MarkerStatsView">
+		<section name="masterView">
+		</section>
+		<section name="detailView">
+		</section>
+	</section>
+	<section name="net.sf.eclipsecs.ui.stats.views.GraphStatsView">
+		<section name="detailView">
+		</section>
+	</section>
+	<section name="net.sf.eclipsecs.core.config.GlobalCheckConfigurationWorkingSet">
+		<item key="sortColumn" value="0"/>
+		<item key="sortDirection" value="1"/>
+		<item key="colWidth0" value="100"/>
+		<item key="selectedRow" value="-1"/>
+		<item key="colWidth1" value="75"/>
+		<item key="colWidth2" value="75"/>
+		<item key="colWidth3" value="30"/>
+	</section>
+	<section name="net.sf.eclipsecs.ui.config.CheckConfigurationConfigureDialog">
+		<item key="sortColumn" value="0"/>
+		<item key="sortDirection" value="1"/>
+		<item key="colWidth0" value="69"/>
+		<item key="selectedRow" value="-1"/>
+		<item key="colWidth1" value="138"/>
+		<item key="colWidth2" value="92"/>
+		<item key="colWidth3" value="161"/>
+		<item key="width" value="710"/>
+		<item key="height" value="676"/>
+		<item key="x" value="289"/>
+		<item key="y" value="25"/>
+		<item key="maximized" value="false"/>
+		<item key="minimized" value="false"/>
+	</section>
+</section>

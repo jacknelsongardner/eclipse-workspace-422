@@ -1,0 +1,216 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 17
+Bundle-ManifestVersion: 2
+Bundle-Name: SWTBot Eclipse UI Plug-in
+Bundle-SymbolicName: org.eclipse.swtbot.eclipse.ui;singleton:=true
+Bundle-Version: 4.1.0.202306071420
+Bundle-Activator: org.eclipse.swtbot.eclipse.ui.Activator
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: Eclipse.org - SWTBot
+Export-Package: org.eclipse.swtbot.eclipse.ui,org.eclipse.swtbot.eclipse
+ .ui.launcher,org.eclipse.swtbot.eclipse.ui.preferences,org.eclipse.swtb
+ ot.eclipse.ui.project,org.eclipse.swtbot.eclipse.ui.wizards
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.eclipse.core.resources,org.eclipse.core.runtime,org.
+ eclipse.core.runtime.jobs,org.eclipse.core.runtime.preferences,org.ecli
+ pse.debug.core,org.eclipse.debug.ui,org.eclipse.jdt.core,org.eclipse.jd
+ t.junit.launcher,org.eclipse.jdt.launching,org.eclipse.jdt.ui,org.eclip
+ se.jface.preference,org.eclipse.jface.resource,org.eclipse.jface.util,o
+ rg.eclipse.jface.wizard,org.eclipse.osgi.util,org.eclipse.pde.core.plug
+ in,org.eclipse.pde.launching,org.eclipse.pde.ui.launcher,org.eclipse.sw
+ t.events,org.eclipse.swt.layout,org.eclipse.swt.widgets,org.osgi.framew
+ ork
+Require-Bundle: org.eclipse.ui;bundle-version="3.6.0",org.eclipse.pde.ui
+Automatic-Module-Name: org.eclipse.swtbot.eclipse.ui
+Eclipse-SourceReferences: scm:git:git://git.eclipse.org/gitroot/swtbot/o
+ rg.eclipse.swtbot.git;path="org.eclipse.swtbot.eclipse.ui";commitId=f0e
+ ed7617d0d7dd61ef72ae1c4399f1ac5d38c65
+Bundle-License: Eclipse Public License 2.0
+
+Name: about.properties
+SHA-256-Digest: kPBFUMgYtp5lOzhjbmbxUu9E06XnuoTarxQWlPGJgAQ=
+
+Name: plugin.xml
+SHA-256-Digest: ahTTZjPIOTB/uSXfNsPy8RXlsf4bMXQcFhm97KvSRvc=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/NewSWTBotTestPluginWizard.cl
+ ass
+SHA-256-Digest: MH8U08dpbE0Ts0qoPccsMcFNuthXStGFkgcL8/Hs5hY=
+
+Name: org/eclipse/swtbot/eclipse/ui/project/_classpath
+SHA-256-Digest: kcNsLZW0w9PWJQDFRxr+Rfkrar/iyCQuLZEJsv6Bo0Y=
+
+Name: META-INF/maven/org.eclipse.swtbot.plugins/org.eclipse.swtbot.eclip
+ se.ui/pom.properties
+SHA-256-Digest: 7ND/djwCiJqDr1AB865jyNa7n7myQy0retnLI5jBUA4=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/project/Templatizer.java
+SHA-256-Digest: h+cQ7rsRH/bgrWAmM5LIJiWCnPqT+0pCBO1OjdnlsHU=
+
+Name: org/eclipse/swtbot/eclipse/ui/launcher/SWTBotJUnitTabGroup.class
+SHA-256-Digest: XdKw/X7myCX+TPXHVFhWsJWl6utrChgC5vcLDx4SJVI=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/ProjectSettingValidator.clas
+ s
+SHA-256-Digest: 5qFFPBiXB1HBpBfpDraiktySDyeD29SxnUT+tV535hs=
+
+Name: about.ini
+SHA-256-Digest: CI/EaFfftFd7iMszkPIwDrmaU7U0blQ60SDoJvUzP4w=
+
+Name: icons/swtbot_plugin64.png
+SHA-256-Digest: GPTw0b5SpCE9GfwPYJR0i5Vo3RAY0rErWyvR2qvJTO8=
+
+Name: intro/css/graphics/icon.gif
+SHA-256-Digest: 7yw6WJAhFev5/DoUMzkkS20gSvn6VAT+kdNfBvlF1Aw=
+
+Name: org/eclipse/swtbot/eclipse/ui/project/Templatizer.class
+SHA-256-Digest: T/w1Z1iJGXTxdSzJgTct1okyQToQS9jCK7jU47Xgtt4=
+
+Name: icons/swtbot_plugin16.png
+SHA-256-Digest: l6jPHhA9qUjtyGjqAPiLfyMAn0tRnEh/LxAJ5vgM6X4=
+
+Name: org/eclipse/swtbot/eclipse/ui/project/_build.properties
+SHA-256-Digest: JXcyiqJ+oxVPDg3UtyTiDVDZdrioLJyvJDmgSuiJo+s=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/WizardPageSettings.class
+SHA-256-Digest: 5YI8snItQ7uybuJz7dM/g2NIvCgnbk6xIIVWy400MlI=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/NewPluginProjectWizardPage$3
+ .class
+SHA-256-Digest: h9aSDInB0aHOYPSHU3qWjO0REf3t/1amk/lpEQbOPDM=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/NewPluginProjectWizardPage$2
+ .class
+SHA-256-Digest: abCL7u43AaNJD/NjmBetgysEmmh63kTtszL2jBVzaLc=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/wizards/NewSWTBotTestPluginWizar
+ d.java
+SHA-256-Digest: WUzxfp/itcWmypqypiRTWNl6NPxezDa2x9ldAsEMLQ8=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/project/_classpath
+SHA-256-Digest: kcNsLZW0w9PWJQDFRxr+Rfkrar/iyCQuLZEJsv6Bo0Y=
+
+Name: org/eclipse/swtbot/eclipse/ui/launcher/SWTBotLaunchShortcut.class
+SHA-256-Digest: 8YLJbmBeur3xohmWDxtAcPPhUqEepqywT3eAjCCTSew=
+
+Name: LICENSE.EPL
+SHA-256-Digest: C+zxZWe+t3+iUrdmRjHdF3yPmhiJ5ImVtFN5xxMOUwM=
+
+Name: org/eclipse/swtbot/eclipse/ui/project/_project
+SHA-256-Digest: gf5+1emLDShQCAd8q4NP05xW5In2vlEdIFufCrjt7mY=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/NewPluginProjectWizardPage.c
+ lass
+SHA-256-Digest: aCb1mWUWnSrKmWByJVYbyPkg6Kqw9jau+978EED1RhU=
+
+Name: org/eclipse/swtbot/eclipse/ui/project/ProjectCreator.class
+SHA-256-Digest: aZ4kg+KJhpG+2miAzuDs56CgK3sioLcS4RJfQFuOQTM=
+
+Name: org/eclipse/swtbot/eclipse/ui/SWTBotLaunchConfigurationDelegate.cl
+ ass
+SHA-256-Digest: DRExSGyReY2yGWWeiPBsLFIsfzn4R+bGZ5njvJ9myVA=
+
+Name: intro/tutorialsExtensionContent.xml
+SHA-256-Digest: cJ6f3cBh8pP07TnhnbTRbeRv5dXE0t9oLzVPtImmQRM=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/wizards/WizardPageSettings.java
+SHA-256-Digest: L7babXGaO02O8a76tXaV+OJhmrrMAjXgLqkDmNENTrQ=
+
+Name: org/eclipse/swtbot/eclipse/ui/Activator.class
+SHA-256-Digest: 4qwRyX8PdgQZWs+jcmrwsynLgs8YcYVgzYnDtilYsns=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/SWTBotLaunchConfigurationDelegat
+ e.java
+SHA-256-Digest: 9q91jJn1xFaZ/Ut+RbMWgVEK8hiyq6E8oeoGPS+Y8pw=
+
+Name: icons/swtbot32.png
+SHA-256-Digest: Kak+0jM21GN6GOin7oMK0INyLy5jRMl3Yclf1qEsFU8=
+
+Name: org/eclipse/swtbot/eclipse/ui/preferences/PreferenceInitializer.cl
+ ass
+SHA-256-Digest: 0XiUSQJJa7XYQGbj114xIYPQ5ekxKyeMKeoeGZ18C7k=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/wizards/NewPluginProjectWizardPa
+ ge.java
+SHA-256-Digest: EZ/xVgoiiaygF5pLlLYJ/H2S5hLz4lqJ83HOItSEZxY=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/project/_project
+SHA-256-Digest: gf5+1emLDShQCAd8q4NP05xW5In2vlEdIFufCrjt7mY=
+
+Name: icons/swtbot_debug16.png
+SHA-256-Digest: e6aC/X+PLlx8nBsSCeCVVKDUeo5MVHH49/Bg08JeoBE=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/NewPluginProjectWizardPage$1
+ .class
+SHA-256-Digest: ZHpbPR2xjp1UnavDzjYxJSP/zrwYwY/TDxXaZz2EKXs=
+
+Name: org/eclipse/swtbot/eclipse/ui/preferences/SWTBotPreferencePage.cla
+ ss
+SHA-256-Digest: 6wVJID4OomSgyU+9PkfbIzaIhwLRGsvkFA/2E7rwOaM=
+
+Name: icons/swtbot_class16.png
+SHA-256-Digest: fMIrnDsOfVcNZFRIpfu/pnKMbMhVv95mGncf0aVzAns=
+
+Name: intro/css/graphics/icon_hov.gif
+SHA-256-Digest: 7mbskRP5cTjLo8QZPXzyUTk7C0aIdD0ywEtrB/zXXn0=
+
+Name: org/eclipse/swtbot/eclipse/ui/project/_MANIFEST.MF
+SHA-256-Digest: x1jGF5lzh8g0k83jtQsopB9FBWM33BX7UPjIwGPjEmI=
+
+Name: icons/swtbot_run16.png
+SHA-256-Digest: UKJXW+ecoEaBV8lMcu8EB4gHs+4LsVqXhiNsrwHJfKA=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/wizards/ProjectSettingValidator.
+ java
+SHA-256-Digest: uwcTjLuFEOOH2SYr6VizWlXFgPB1XdKL5hZDboXodOs=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/preferences/PreferenceInitialize
+ r.java
+SHA-256-Digest: DbE2V8aK8sDfJXTnQpx2u8bBd200v0N+sneLIoMcOIs=
+
+Name: intro/css/tutorial.css
+SHA-256-Digest: Nurx9zSErV3mBX/RJNKK/CJwKNKhRqa5nU0bv5Vs9OM=
+
+Name: about.html
+SHA-256-Digest: 7mbS+ztMDS7S5/aYvJ7U49bPd/pcr0CtAylhJdsaxfA=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/launcher/SWTBotJUnitTabGroup.jav
+ a
+SHA-256-Digest: 4rwh3A1+4y8V0OBOJAeK+0uXNxQOjt0AOQoF/LSLRSA=
+
+Name: icons/swtbot_class64.png
+SHA-256-Digest: sGTrjL7fuQ2rJcQrBshH0DBDJHdvNLhTd/DK5/2L+BU=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/launcher/SWTBotLaunchShortcut.ja
+ va
+SHA-256-Digest: kA17YeCSvZ96LoWjjmAmf31wNz9mtcuGGI0AONuFtIE=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/preferences/SWTBotPreferencePage
+ .java
+SHA-256-Digest: PXIm0Sl67p+dLygFCONoORPBXiD7JiMh4Bbd9+n34/I=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/project/ProjectCreator.java
+SHA-256-Digest: sUUOVR+WRLwJMt59JZOkDb6tp/1fZKatM2+exg3p230=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/project/_build.properties
+SHA-256-Digest: JXcyiqJ+oxVPDg3UtyTiDVDZdrioLJyvJDmgSuiJo+s=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/wizards/LaunchConfigPropertiesWi
+ zardPage.java
+SHA-256-Digest: iGdtE2KK+8W/SWXn2Z3+An63DhzsVBWIuJ9VwCXmqZQ=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/project/_MANIFEST.MF
+SHA-256-Digest: x1jGF5lzh8g0k83jtQsopB9FBWM33BX7UPjIwGPjEmI=
+
+Name: org/eclipse/swtbot/eclipse/ui/wizards/LaunchConfigPropertiesWizard
+ Page.class
+SHA-256-Digest: Qw49TKBLi+7X0U01IAPy307/3YjVqLcJ0jD8HO2SIzY=
+
+Name: src/org/eclipse/swtbot/eclipse/ui/Activator.java
+SHA-256-Digest: F4drdNA6JCF4160yWuCFoSqrGw2IExa+P/HFCmh2SQs=
+
+Name: META-INF/maven/org.eclipse.swtbot.plugins/org.eclipse.swtbot.eclip
+ se.ui/pom.xml
+SHA-256-Digest: EqXN1aoOO5ioSo80gjjCf/mG2gRbv1Bwtv04d81RsO0=
+
