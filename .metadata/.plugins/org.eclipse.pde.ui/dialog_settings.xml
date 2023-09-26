@@ -13,4 +13,11 @@
 	</section>
 	<section name="pluginsView">
 	</section>
+	<section name="org.eclipse.pde.ui.PLUGIN_STATUS_DIALOG">
+		<item key="DIALOG_WIDTH" value="400"/>
+		<item key="DIALOG_HEIGHT" value="377"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="targetStateView">
+	</section>
 </section>

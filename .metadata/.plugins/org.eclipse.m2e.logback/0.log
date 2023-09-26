@@ -15185,3 +15185,35 @@ org.eclipse.m2e.core.internal.lifecyclemapping.DuplicateLifecycleMappingMetadata
 2023-09-24 19:42:50,123 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.sample/src/main/resources
 2023-09-24 19:42:50,124 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-09-24 19:42:50,124 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.sample/test
+2023-09-26 10:29:31,066 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-09-26 10:50:01,884 [Worker-29: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-09-26 10:50:01,886 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/jack/eclipse-workspace/demo2/src/main/resources
+2023-09-26 10:50:01,888 [Worker-29: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-09-26 10:50:01,889 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/jack/eclipse-workspace/demo2/src/test/resources
+2023-09-26 10:50:02,298 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:02,299 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs-updatesite/src/main/resources
+2023-09-26 10:50:02,315 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:02,315 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.branding/src/main/resources
+2023-09-26 10:50:02,317 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:02,317 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.branding/test
+2023-09-26 10:50:02,662 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - File already exist, skipping
+2023-09-26 10:50:03,017 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:03,017 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.checkstyle/src/main/resources
+2023-09-26 10:50:03,018 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:03,021 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-09-26 10:50:10,033 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:10,033 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.core/src/main/resources
+2023-09-26 10:50:10,034 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:10,034 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.core/test
+2023-09-26 10:50:10,140 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:10,143 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 188 resources
+2023-09-26 10:50:10,151 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:10,151 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.doc/test
+2023-09-26 10:50:13,776 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:13,777 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.ui/src/main/resources
+2023-09-26 10:50:13,778 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:13,778 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 47 resources
+2023-09-26 10:50:13,920 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:13,920 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.sample/src/main/resources
+2023-09-26 10:50:13,921 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-26 10:50:13,921 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jack/eclipse-workspace/net.sf.eclipsecs.sample/test
