@@ -12,7 +12,7 @@
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item key="pageIndex" value="0"/>
+		<item key="pageIndex" value="2"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
@@ -38,5 +38,11 @@
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
 	<section name="RenameInformationPopup">
+	</section>
+	<section name="NewPackageWizardPage">
+		<item key="create_package_info_java" value="false"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item key="index" value="1"/>
 	</section>
 </section>

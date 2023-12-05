@@ -18,6 +18,18 @@ private static final String MSG_KEY = "comments";
     
     private int maxHalsteadLength = 0;
     
+    public void setMax(int max) {
+    	maxHalsteadLength = max;
+    }
+    
+    public int getOperatorsFound() {
+    	return howManyOperatorsFound;
+    }
+    
+    public int getOperandsFound() {
+    	return howManyOperandsFound;
+    }
+    
     private int[] operandTokens = new int[] {
         TokenTypes.IDENT,
         //TokenTypes.LITERAL_STRING,
@@ -157,20 +169,6 @@ private static final String MSG_KEY = "comments";
     @Override
     public void visitToken(DetailAST ast) 
     {
-    	/*
-    	if (Arrays.asList(operandTokens).contains(ast.getType())) {
-            // Increment the count
-            howManyOperandsFound++;
-            log(ast, "Operators found in code!", howManyOperandsFound);
-        }
-    	else if (ast.getType() == TokenTypes.PLUS) {
-            // Increment the count
-            howManyOperandsFound++;
-            log(ast, "Plus operator found in code!");
-        }
-    	else
-    	{
-    	*/
     		for(int i = 0; i < operandTokens.length; i++)
     		{
     			if (ast.getType() == operandTokens[i])
@@ -188,9 +186,6 @@ private static final String MSG_KEY = "comments";
     	            log(ast, ast.getType() + " operator found in code!");
     			}
     		}
-    	/*
-    	}
-    	*/
     	
     }
     
