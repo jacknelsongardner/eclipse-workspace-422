@@ -75,6 +75,17 @@ public class NumberOfLinesOfCommentsWhiteTest {
     }
     
     @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	this.comCheck.GetResult();
+    	
+    	verify(this.comCheck).GetResult();
+    	
+    }
+    
+    @Test
     public void testBeginTree()
     {
     	this.setUp();

@@ -71,6 +71,16 @@ public class NumberOfOperandsWhiteTest {
         
     }
     
+    @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	this.opandCheck.GetResult();
+    	
+    	verify(this.opandCheck).GetResult();
+    	
+    }
     
     @Test
     public void testBeginTree()

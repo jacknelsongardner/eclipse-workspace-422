@@ -16940,3 +16940,31 @@ org.apache.maven.project.ProjectBuildingException: Some problems were encountere
 2023-12-14 21:38:27,378 [Worker-147: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
 2023-12-14 21:38:27,380 [Worker-147: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2023-12-14 21:38:27,381 [Worker-147: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 21:53:02,975 [Worker-161: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:53:02,985 [Worker-161: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 21:53:02,986 [Worker-161: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:53:02,986 [Worker-161: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 21:53:14,534 [Worker-161: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:53:14,535 [Worker-161: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 21:53:14,536 [Worker-161: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:53:14,536 [Worker-161: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 21:53:41,304 [Worker-161: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:53:41,306 [Worker-161: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 21:53:41,307 [Worker-161: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:53:41,307 [Worker-161: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 21:54:12,864 [Worker-157: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:54:12,866 [Worker-157: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 21:54:12,867 [Worker-157: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:54:12,867 [Worker-157: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 21:54:33,258 [Worker-163: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:54:33,260 [Worker-163: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 21:54:33,260 [Worker-163: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:54:33,260 [Worker-163: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 21:54:40,455 [Worker-161: Launching NumberOfCommentsWhiteTest] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:54:40,456 [Worker-161: Launching NumberOfCommentsWhiteTest] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 21:54:40,457 [Worker-161: Launching NumberOfCommentsWhiteTest] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 21:54:40,458 [Worker-161: Launching NumberOfCommentsWhiteTest] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
+2023-12-14 23:46:10,899 [Worker-180: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 23:46:10,902 [Worker-180: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-12-14 23:46:10,902 [Worker-180: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-12-14 23:46:10,902 [Worker-180: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes

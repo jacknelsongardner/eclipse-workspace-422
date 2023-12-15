@@ -147,6 +147,17 @@ public class NumberOfExpressionsWhiteTest {
     }
     
     @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	this.exprCheck.GetResult();
+    	
+    	verify(this.exprCheck).GetResult();
+    	
+    }
+    
+    @Test
     public void testBeginTree()
     {
     	this.setUp();

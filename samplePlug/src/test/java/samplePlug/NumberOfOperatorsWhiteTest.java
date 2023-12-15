@@ -98,6 +98,17 @@ public class NumberOfOperatorsWhiteTest {
     }
     
     @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	this.optorCheck.GetResult();
+    	
+    	verify(this.optorCheck).GetResult();
+    	
+    }
+    
+    @Test
     public void testBeginTree()
     {
     	this.setUp();

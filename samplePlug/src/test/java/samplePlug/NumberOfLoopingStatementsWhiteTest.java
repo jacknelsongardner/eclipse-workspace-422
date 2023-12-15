@@ -63,6 +63,17 @@ public class NumberOfLoopingStatementsWhiteTest {
     }
     
     @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	this.loopCheck.GetResult();
+    	
+    	verify(this.loopCheck).GetResult();
+    	
+    }
+    
+    @Test
     public void testBeginTree()
     {
     	this.setUp();

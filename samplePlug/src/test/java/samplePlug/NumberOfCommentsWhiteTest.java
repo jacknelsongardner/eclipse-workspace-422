@@ -72,6 +72,17 @@ public class NumberOfCommentsWhiteTest {
     }
     
     @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	this.comCheck.GetResult();
+    	
+    	verify(this.comCheck).GetResult();
+    	
+    }
+    
+    @Test
     public void testGetAcceptableTokens()
     {
     	this.setUp();
