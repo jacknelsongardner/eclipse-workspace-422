@@ -15,8 +15,7 @@ private static final String MSG_KEY = "comments";
     private int howManyOperandsFound = 0;
     private int howManyOperatorsFound = 0;
     
-    
-    private int maxHalsteadLength = 0;
+    public int GetResult() {return howManyOperandsFound; }
     
     private int[] operandTokens = new int[] {
         TokenTypes.IDENT,
@@ -58,6 +57,12 @@ private static final String MSG_KEY = "comments";
     {
         return getDefaultTokens();
     }
+    
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyOperandsFound = 0;
+    	this.howManyOperatorsFound = 0;
+    }
 
     // VISIT TOKEN ACTIONS
     @Override
@@ -68,18 +73,17 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == operandTokens[i])
     			{
     				howManyOperandsFound++;
-    	            log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
     }
-    
+   
     @Override
     public void finishTree(DetailAST ast) {
-    	
+    	String message = "Operands found in code: " + howManyOperandsFound;
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operands found in code: " + howManyOperandsFound, howManyOperandsFound);
+        log(howManyOperandsFound, message);
         
     }
-	
+    
 }

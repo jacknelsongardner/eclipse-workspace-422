@@ -14,6 +14,8 @@ private static final String MSG_KEY = "comments";
     
     private int howManyExpressionsFound = 0;
     
+    public int GetResult() { return howManyExpressionsFound; }
+    
     private int[] expressionTokens = new int[] {
     		
     		TokenTypes.LITERAL_ASSERT,
@@ -102,7 +104,8 @@ private static final String MSG_KEY = "comments";
     	    TokenTypes.WILDCARD_TYPE,
     	    TokenTypes.LITERAL_NULL,
     	    TokenTypes.LITERAL_TRUE,
-    	    TokenTypes.LITERAL_FALSE
+    	    TokenTypes.LITERAL_FALSE,
+    	    TokenTypes.EXPR
     };
     
     
@@ -125,6 +128,11 @@ private static final String MSG_KEY = "comments";
         return getDefaultTokens();
     }
 
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyExpressionsFound = 0;
+    }
+    
     // VISIT TOKEN ACTIONS
     @Override
     public void visitToken(DetailAST ast) 
@@ -134,7 +142,7 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == expressionTokens[i])
     			{
     				howManyExpressionsFound++;
-    	            log(ast, ast.getType() + " operand found in code!");
+    	            //log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
@@ -143,8 +151,9 @@ private static final String MSG_KEY = "comments";
     @Override
     public void finishTree(DetailAST ast) {
     	
+    	String message = "Expressions found in code: " + howManyExpressionsFound;
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operands found in code: " + howManyExpressionsFound, howManyExpressionsFound);
+        log(howManyExpressionsFound, message);
         
     }
 	

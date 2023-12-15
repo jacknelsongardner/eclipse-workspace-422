@@ -14,6 +14,8 @@ private static final String MSG_KEY = "comments";
     
     private int howManyLoopingStatementsFound = 0;
     
+    public int GetResult() { return howManyLoopingStatementsFound; }
+    
     private int[] loopingTokens = new int[] {
     		TokenTypes.LITERAL_FOR,
     	    TokenTypes.LITERAL_WHILE,
@@ -41,6 +43,11 @@ private static final String MSG_KEY = "comments";
     {
         return getDefaultTokens();
     }
+    
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyLoopingStatementsFound = 0;
+    }
 
     // VISIT TOKEN ACTIONS
     @Override
@@ -51,7 +58,7 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == loopingTokens[i])
     			{
     				howManyLoopingStatementsFound++;
-    	            log(ast, ast.getType() + " operand found in code!");
+    	            ///log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
@@ -60,8 +67,10 @@ private static final String MSG_KEY = "comments";
     @Override
     public void finishTree(DetailAST ast) {
     	
+    	String message = "Looping statements found in code: " + howManyLoopingStatementsFound;
+    	
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operands found in code: " + howManyLoopingStatementsFound, howManyLoopingStatementsFound);
+        log(howManyLoopingStatementsFound, message);
         
     }
 	

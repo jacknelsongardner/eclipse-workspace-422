@@ -14,6 +14,8 @@ private static final String MSG_KEY = "comments";
     
     private int howManyOperatorsFound = 0;
     
+    public int GetResult() {return howManyOperatorsFound; }
+    
     private int[] operatorTokens = new int[] {
     		TokenTypes.PLUS,
     	    TokenTypes.MINUS,
@@ -70,6 +72,12 @@ private static final String MSG_KEY = "comments";
     {
         return getDefaultTokens();
     }
+    
+    @Override
+    public void beginTree(DetailAST ast) {
+    	
+    	this.howManyOperatorsFound = 0;
+    }
 
     // VISIT TOKEN ACTIONS
     @Override
@@ -80,7 +88,7 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == operatorTokens[i])
     			{
     				howManyOperatorsFound++;
-    	            log(ast, ast.getType() + " operand found in code!");
+    	            //log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
@@ -89,8 +97,10 @@ private static final String MSG_KEY = "comments";
     @Override
     public void finishTree(DetailAST ast) {
     	
+    	
+    	String message = "Operators found in code: " + howManyOperatorsFound;
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operands found in code: " + howManyOperatorsFound, howManyOperatorsFound);
+        log(howManyOperatorsFound, message);
         
     }
 	

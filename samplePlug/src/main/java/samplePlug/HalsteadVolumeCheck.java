@@ -17,6 +17,8 @@ public class HalsteadVolumeCheck extends AbstractCheck {
 
     private Set<Integer> encounteredTokens = new HashSet<>();
 
+    public int GetResult() { return calculateHalsteadVolume();}
+    
     private int[] operandTokens = new int[]{TokenTypes.IDENT,
             TokenTypes.LITERAL_CHAR,
             TokenTypes.LITERAL_FLOAT,
@@ -122,6 +124,16 @@ public class HalsteadVolumeCheck extends AbstractCheck {
     }
 
     @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyOperandsFound = 0;
+        this.howManyOperatorsFound = 0;
+        this.howManyUniqueOpsFound = 0;  // Added initialization
+
+        this.encounteredTokens = new HashSet<>();
+    	
+    }
+    
+    @Override
     public void visitToken(DetailAST ast) {
         boolean goodToken = false;
 
@@ -129,7 +141,7 @@ public class HalsteadVolumeCheck extends AbstractCheck {
             if (ast.getType() == operandTokens[i]) {
                 howManyOperandsFound++;
                 goodToken = true;
-                log(ast, ast.getType() + " operand found in code!");
+                //log(ast, ast.getType() + " operand found in code!");
             }
         }
 
@@ -137,7 +149,7 @@ public class HalsteadVolumeCheck extends AbstractCheck {
             if (ast.getType() == operatorTokens[i]) {
                 howManyOperatorsFound++;
                 goodToken = true;
-                log(ast, ast.getType() + " operator found in code!");
+                //log(ast, ast.getType() + " operator found in code!");
             }
         }
 
@@ -151,11 +163,11 @@ public class HalsteadVolumeCheck extends AbstractCheck {
 
     @Override
     public void finishTree(DetailAST ast) {
-        log(ast, "Operators found in code: " + howManyOperatorsFound, howManyOperandsFound);
-        log(ast, "Operands found in code: " + howManyOperandsFound, howManyOperandsFound);
+        
 
         int halsteadVolume = calculateHalsteadVolume();
-        log(ast, "Halstead Volume: " + halsteadVolume, halsteadVolume);
+        String message = "Halstead Volume: " + halsteadVolume;
+        log(halsteadVolume,message);
     }
 
     private int calculateHalsteadVolume() {

@@ -20,9 +20,12 @@ private static final String MSG_KEY = "comments";
     
     private int howManyUniqueOpsFound = 0;
     
-    private int maxHalsteadLength = 0;
     
     private Set<Integer> encounteredTokens = new HashSet<>();
+    
+    public int GetResult() {
+        return howManyUniqueOpsFound;
+    }
     
     private int[] operandTokens = new int[] {
         TokenTypes.IDENT,
@@ -159,6 +162,14 @@ private static final String MSG_KEY = "comments";
         return getDefaultTokens();
     }
 
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyOperandsFound = 0;
+    	this.howManyOperatorsFound = 0;
+    	this.howManyUniqueOpsFound = 0;
+    	
+    }
+    
     // VISIT TOKEN ACTIONS
     @Override
     public void visitToken(DetailAST ast) 
@@ -185,7 +196,7 @@ private static final String MSG_KEY = "comments";
     			{
     				howManyOperandsFound++;
     				goodToken = true;
-    	            log(ast, ast.getType() + " operand found in code!");
+    	            //log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
@@ -195,7 +206,7 @@ private static final String MSG_KEY = "comments";
     			{
     				howManyOperatorsFound++;
     				goodToken = true;
-    	            log(ast, ast.getType() + " operator found in code!");
+    	            //log(ast, ast.getType() + " operator found in code!");
     			}
     		}
     		
@@ -212,15 +223,11 @@ private static final String MSG_KEY = "comments";
     @Override
     public void finishTree(DetailAST ast) {
     	
+    	String operator_msg = "Unique ops found in code: " + this.howManyUniqueOpsFound;
+    	
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operators found in code: " + howManyOperatorsFound, howManyOperandsFound);
-        log(ast, "Operands found in code: " + howManyOperandsFound, howManyOperandsFound);
+        log(this.howManyUniqueOpsFound, operator_msg);
         
-        int halsteadLength = howManyOperandsFound * howManyOperatorsFound;
-        if (halsteadLength >= maxHalsteadLength)
-        {
-            log(ast, "Halstead Length: " + halsteadLength, halsteadLength);
-        }
     }
 	
 }

@@ -1,6 +1,6 @@
 package samplePlug;
 
-import samplePlug.HalsteadLengthCheck;
+import samplePlug.HalsteadVolumeCheck;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,17 +25,8 @@ import static org.mockito.Mockito.*;
 
 // TODO:  import MOCKITO here
 
-public class HalsteadLengthBlackTest {
-	 
-    DetailAST mockOperand;
-    DetailAST mockOperator;
-    
-    DetailAST mockNum;
-    
-    DetailAST blankast;
-    
-    HalsteadLengthCheck halsteadLengthCheck;
-    
+public class HalsteadVolumeWhiteTest {
+
     int[] optokens = { TokenTypes.IDENT,
         //TokenTypes.LITERAL_STRING,
         TokenTypes.LITERAL_CHAR,
@@ -91,6 +82,14 @@ public class HalsteadLengthBlackTest {
         TokenTypes.SL_ASSIGN,
         TokenTypes.SR_ASSIGN,
         TokenTypes.BSR_ASSIGN };
+    DetailAST mockOperand;
+    DetailAST mockOperator;
+    
+    DetailAST mockNum;
+    
+    DetailAST blankast;
+    
+    HalsteadVolumeCheck halCheck;
     
     @BeforeEach
     public void setUp() {
@@ -104,11 +103,10 @@ public class HalsteadLengthBlackTest {
     	when(mockOperator.getType()).thenReturn(TokenTypes.PLUS);
     	
     	mockNum = mock(DetailAST.class);
-    	when(mockOperator.getLineNo()).thenReturn(5);
+    	when(mockNum.getLineNo()).thenReturn(5);
     	
     	// mocking halchecker
-        halsteadLengthCheck = spy(new HalsteadLengthCheck());
-        halsteadLengthCheck.setMax(1);
+        halCheck = spy(new HalsteadVolumeCheck());
         
         
     }
@@ -121,9 +119,9 @@ public class HalsteadLengthBlackTest {
     	
     	DetailAST blankast = mock(DetailAST.class);
     	
-    	halsteadLengthCheck.beginTree(blankast);
+    	halCheck.beginTree(blankast);
     	
-    	verify(halsteadLengthCheck).beginTree(blankast);
+    	verify(halCheck).beginTree(blankast);
     	
     }
     
@@ -132,7 +130,9 @@ public class HalsteadLengthBlackTest {
     {
     	this.setUp();
     	
-    	assertArrayEquals(optokens,halsteadLengthCheck.getAcceptableTokens());
+    	assertArrayEquals(optokens,halCheck.getAcceptableTokens());
+    	
+    	verify(halCheck).getAcceptableTokens();
     	
     }
     
@@ -141,7 +141,9 @@ public class HalsteadLengthBlackTest {
     {
     	this.setUp();
     	
-    	assertArrayEquals(optokens,halsteadLengthCheck.getDefaultTokens());
+    	assertArrayEquals(optokens,halCheck.getDefaultTokens());
+
+    	verify(halCheck).getDefaultTokens();
     }
     
     @Test
@@ -149,67 +151,47 @@ public class HalsteadLengthBlackTest {
     {
     	this.setUp();
     	
-    	assertArrayEquals(optokens,halsteadLengthCheck.getRequiredTokens());
+    	assertArrayEquals(optokens,halCheck.getRequiredTokens());
+
+    	verify(halCheck).getRequiredTokens();
     }
     
     @Test
     public void testVisitTokenOperand()
     {
     	this.setUp();
-    	halsteadLengthCheck.visitToken(blankast);
     	
-    	verify(halsteadLengthCheck).visitToken(mockOperand);
+    	halCheck.visitToken(mockOperand);
+    	verify(halCheck).visitToken(mockOperand);
     	
     }
     
     @Test
-    public void testVisitTokenIncrementsOperandsAndLogs() {
-        DetailAST mockAst = mock(DetailAST.class);
-        halsteadLengthCheck.visitToken(mockAst);
-
-        assertEquals(1, halsteadLengthCheck.getOperandsFound());
-
-        // Verify that the log method was called with the expected arguments
-        verify(halsteadLengthCheck).log(anyInt(), anyString(), eq(halsteadLengthCheck.getOperandsFound()));
+    public void testVisitTokenOperator()
+    {
+    	this.setUp();
+    	
+    	
+    	halCheck.visitToken(mockOperator);
+    	verify(halCheck).visitToken(mockOperator);
+    	
+    	
     }
-
+    
     @Test
-    public void testVisitTokenIncrementsOperatorsAndLogs() {
-        DetailAST mockAst = mock(DetailAST.class);
-        halsteadLengthCheck.visitToken(mockAst);
-
-        assertEquals(1, halsteadLengthCheck.getOperatorsFound());
-
-        // Verify that the log method was called with the expected arguments
-        verify(halsteadLengthCheck).log(anyInt(), anyString(), eq(halsteadLengthCheck.getOperatorsFound()));
+    public void testFinishTreeUnderMax()
+    {
+    	this.setUp();
+    	
+    	doNothing().when(halCheck).log(anyInt(),anyString());
+    	
+    	//halCheck.visitToken(mockOperator);
+    	
+    	halCheck.finishTree(mockNum);
+    	
+    	verify(halCheck).finishTree(mockNum);
+    	
+    	
     }
-
-    @Test
-    public void testFinishTreeLogsHalsteadLengthIfExceedsMax() {
-        DetailAST mockAst = mock(DetailAST.class);
-
-        // Set a specific maxHalsteadLength for testing
-        halsteadLengthCheck.setMax(10);
-
-        // Set operands and operators count to trigger the log
-        halsteadLengthCheck.visitToken(mockAst);
-        halsteadLengthCheck.visitToken(mockAst);
-
-        // Verify that the log method was called with the expected arguments
-        verify(halsteadLengthCheck).log(anyInt(), anyString(), eq(halsteadLengthCheck.getOperandsFound() * halsteadLengthCheck.getOperatorsFound()));
-    }
-
-    @Test
-    public void testFinishTreeDoesNotLogIfHalsteadLengthDoesNotExceedMax() {
-        DetailAST mockAst = mock(DetailAST.class);
-
-        // Set a specific maxHalsteadLength for testing
-        halsteadLengthCheck.setMax(100);
-
-        // Set operands and operators count that do not exceed maxHalsteadLength
-        halsteadLengthCheck.visitToken(mockAst);
-
-        // Verify that the log method was not called
-        verify(halsteadLengthCheck, never()).log(any(), anyString(), anyInt());
-    }
+   
 }

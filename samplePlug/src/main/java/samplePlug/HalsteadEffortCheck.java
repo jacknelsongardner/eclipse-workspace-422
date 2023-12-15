@@ -15,8 +15,14 @@ public class HalsteadEffortCheck extends AbstractCheck {
     private int howManyOperatorsFound = 0;
     private int howManyUniqueOpsFound = 0;  // Added initialization
 
+    public int GetResult() {
+        int halsteadVolume = calculateHalsteadVolume();
+        double halsteadDifficulty = calculateHalsteadDifficulty();
+        return (int)calculateHalsteadEffort(halsteadVolume, halsteadDifficulty);
+    }
+    
     private Set<Integer> encounteredTokens = new HashSet<>();
-
+    
     private int[] operandTokens = new int[]{TokenTypes.IDENT,
             TokenTypes.LITERAL_CHAR,
             TokenTypes.LITERAL_FLOAT,
@@ -122,6 +128,14 @@ public class HalsteadEffortCheck extends AbstractCheck {
     }
 
     @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyOperandsFound = 0;
+    	this.howManyOperatorsFound = 0;
+    	this.howManyUniqueOpsFound = 0;
+    	
+    }
+    
+    @Override
     public void visitToken(DetailAST ast) {
         boolean goodToken = false;
 
@@ -129,7 +143,7 @@ public class HalsteadEffortCheck extends AbstractCheck {
             if (ast.getType() == operandTokens[i]) {
                 howManyOperandsFound++;
                 goodToken = true;
-                log(ast, ast.getType() + " operand found in code!");
+                //log(ast, ast.getType() + " operand found in code!");
             }
         }
 
@@ -137,7 +151,7 @@ public class HalsteadEffortCheck extends AbstractCheck {
             if (ast.getType() == operatorTokens[i]) {
                 howManyOperatorsFound++;
                 goodToken = true;
-                log(ast, ast.getType() + " operator found in code!");
+                //log(ast, ast.getType() + " operator found in code!");
             }
         }
 
@@ -151,16 +165,17 @@ public class HalsteadEffortCheck extends AbstractCheck {
 
     @Override
     public void finishTree(DetailAST ast) {
-        log(ast, "Operators found in code: " + howManyOperatorsFound, howManyOperandsFound);
-        log(ast, "Operands found in code: " + howManyOperandsFound, howManyOperandsFound);
+        //log(ast, "Operators found in code: " + howManyOperatorsFound, howManyOperandsFound);
+        //log(ast, "Operands found in code: " + howManyOperandsFound, howManyOperandsFound);
 
         int halsteadVolume = calculateHalsteadVolume();
         double halsteadDifficulty = calculateHalsteadDifficulty();
         double halsteadEffort = calculateHalsteadEffort(halsteadVolume, halsteadDifficulty);
 
-        log(ast, "Halstead Volume: " + halsteadVolume, halsteadVolume);
-        log(ast, "Halstead Difficulty: " + halsteadDifficulty, halsteadDifficulty);
-        log(ast, "Halstead Effort: " + halsteadEffort, (int) halsteadEffort);
+        //log(ast, "Halstead Volume: " + halsteadVolume, halsteadVolume);
+        //log(ast, "Halstead Difficulty: " + halsteadDifficulty, halsteadDifficulty);
+        String message = "Halstead Effort: " + halsteadEffort;
+        log((int) halsteadEffort, message);
     }
 
     private int calculateHalsteadVolume() {

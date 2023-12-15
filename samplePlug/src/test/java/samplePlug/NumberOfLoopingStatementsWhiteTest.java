@@ -17,12 +17,15 @@ import java.util.List;
 import java.util.Arrays;
 
 import org.mockito.MockedStatic;
+
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 //import static org.mockito.Mockito.*;
 
 // TODO:  import MOCKITO here
 
-public class NumberOfOperatorsTest {
+public class NumberOfLoopingStatementsWhiteTest {
 
     
     DetailAST semiMockTooMany;
@@ -30,32 +33,46 @@ public class NumberOfOperatorsTest {
     DetailAST semiMockJustRight;
     DetailAST semiMockNull;
     
-    DetailAST mockOperand;
+    DetailAST mockWhile;
     DetailAST mockOperator;
     DetailAST mockNum;
     
+    int[] loopTokens = new int[] {
+    		TokenTypes.LITERAL_FOR,
+    	    TokenTypes.LITERAL_WHILE,
+    	    TokenTypes.LITERAL_DO,
+    	    TokenTypes.LITERAL_BREAK,
+    	    TokenTypes.LITERAL_CONTINUE,
+    };
     
-    NumberOfOperatorsCheck opCheck;
+    NumberOfLoopingStatementsCheck loopCheck;
     
     @BeforeEach
     public void setUp() {
 
     	// mocking having operators
-    	mockOperand = mock(DetailAST.class);
-    	when(mockOperand.getType()).thenReturn(TokenTypes.IDENT);
-    	
-    	
-    	// mocking having operands
-    	mockOperator = mock(DetailAST.class);
-    	when(mockOperator.getType()).thenReturn(TokenTypes.PLUS);
+    	mockWhile = mock(DetailAST.class);
+    	when(mockWhile.getType()).thenReturn(TokenTypes.LITERAL_WHILE);
     	
     	// mocking the number of ops found
     	mockNum = mock(DetailAST.class);
-    	when(mockOperator.getLineNo()).thenReturn(5);
+    	when(mockNum.getLineNo()).thenReturn(5);
     	
-    	
-        opCheck = new NumberOfOperatorsCheck();
+        loopCheck = spy(new NumberOfLoopingStatementsCheck());
        
+    }
+    
+    @Test
+    public void testBeginTree()
+    {
+    	this.setUp();
+    	
+    	DetailAST blankast = mock(DetailAST.class);
+    	
+    	loopCheck.beginTree(blankast);
+    	    	
+    	verify(loopCheck).beginTree(blankast);
+    	
     }
     
     @Test
@@ -63,9 +80,9 @@ public class NumberOfOperatorsTest {
     {
     	this.setUp();
     	
-    	opCheck.getAcceptableTokens();
+    	assertArrayEquals(loopTokens,loopCheck.getAcceptableTokens());
     	
-    	verify(opCheck).getAcceptableTokens();
+    	verify(loopCheck).getAcceptableTokens();
     }
     
     @Test
@@ -73,9 +90,9 @@ public class NumberOfOperatorsTest {
     {
     	this.setUp();
     	
-    	opCheck.getDefaultTokens();
+    	assertArrayEquals(loopTokens,loopCheck.getDefaultTokens());
     	
-    	verify(opCheck).getDefaultTokens();
+    	verify(loopCheck).getDefaultTokens();
     }
     
     @Test
@@ -83,9 +100,9 @@ public class NumberOfOperatorsTest {
     {
     	this.setUp();
     	
-    	opCheck.getRequiredTokens();
+    	assertArrayEquals(loopTokens,loopCheck.getRequiredTokens());
     	
-    	verify(opCheck).getRequiredTokens();
+    	verify(loopCheck).getRequiredTokens();
     }
     
     @Test
@@ -93,18 +110,20 @@ public class NumberOfOperatorsTest {
     {
     	this.setUp();
     	
-    	opCheck.visitToken(mockOperator);
+    	loopCheck.visitToken(mockWhile);
     	
-    	verify(opCheck).visitToken(mockOperator);
+    	verify(loopCheck).visitToken(mockWhile);
     }
     
     @Test
     public void testFinishTree()
     {
     	this.setUp();
+    	doNothing().when(loopCheck).log(anyInt(),anyString());
+
     	
-    	opCheck.finishTree(mockNum);
+    	loopCheck.finishTree(mockNum);
     	
-    	verify(opCheck).finishTree(mockNum);
+    	verify(loopCheck).finishTree(mockNum);
     }
 }

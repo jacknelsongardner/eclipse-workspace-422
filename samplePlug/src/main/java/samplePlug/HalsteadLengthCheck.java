@@ -18,16 +18,10 @@ private static final String MSG_KEY = "comments";
     
     private int maxHalsteadLength = 0;
     
+    public int GetResult() { return howManyOperandsFound * howManyOperatorsFound; }
+    
     public void setMax(int max) {
     	maxHalsteadLength = max;
-    }
-    
-    public int getOperatorsFound() {
-    	return howManyOperatorsFound;
-    }
-    
-    public int getOperandsFound() {
-    	return howManyOperandsFound;
     }
     
     private int[] operandTokens = new int[] {
@@ -165,6 +159,13 @@ private static final String MSG_KEY = "comments";
         return getDefaultTokens();
     }
 
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyOperandsFound = 0;
+    	this.howManyOperatorsFound = 0;
+    	
+    }
+    
     // VISIT TOKEN ACTIONS
     @Override
     public void visitToken(DetailAST ast) 
@@ -174,7 +175,6 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == operandTokens[i])
     			{
     				howManyOperandsFound++;
-    	            log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
@@ -183,7 +183,6 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == operatorTokens[i])
     			{
     				howManyOperatorsFound++;
-    	            log(ast, ast.getType() + " operator found in code!");
     			}
     		}
     	
@@ -192,15 +191,15 @@ private static final String MSG_KEY = "comments";
     @Override
     public void finishTree(DetailAST ast) {
     	
+    	String operator_msg = "Operators found in code: " + howManyOperatorsFound;
+    	String operand_msg = "Operands found in code: " + howManyOperandsFound;
+    	
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operators found in code: " + howManyOperatorsFound, howManyOperandsFound);
-        log(ast, "Operands found in code: " + howManyOperandsFound, howManyOperandsFound);
+        //log(howManyOperandsFound, operator_msg);
+        //log(howManyOperandsFound, operand_msg);
         
         int halsteadLength = howManyOperandsFound * howManyOperatorsFound;
-        if (halsteadLength >= maxHalsteadLength)
-        {
-            log(ast, "Halstead Length: " + halsteadLength, halsteadLength);
-        }
+        log(halsteadLength, "HalsteadLength: " + halsteadLength);
     }
 	
 }

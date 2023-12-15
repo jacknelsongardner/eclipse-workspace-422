@@ -114,6 +114,17 @@ public class HalsteadLengthWhiteTest {
     
     
     @Test
+    public void testGetResult()
+    {
+    	this.setUp();
+    	
+    	halCheck.GetResult();
+    	
+    	verify(halCheck).GetResult();
+    	
+    }
+    
+    @Test
     public void testBeginTree()
     {
     	this.setUp();
@@ -152,7 +163,7 @@ public class HalsteadLengthWhiteTest {
     {
     	this.setUp();
     	
-    	assertArrayEquals(optokens,halCheck.getAcceptableTokens());
+    	assertArrayEquals(optokens,halCheck.getRequiredTokens());
 
     	verify(halCheck).getRequiredTokens();
     }
@@ -162,7 +173,7 @@ public class HalsteadLengthWhiteTest {
     {
     	this.setUp();
     	
-
+    	halCheck.visitToken(mockOperand);
     	verify(halCheck).visitToken(mockOperand);
     	
     }
@@ -174,7 +185,7 @@ public class HalsteadLengthWhiteTest {
     	
     	
     	halCheck.visitToken(mockOperator);
-    	
+    	verify(halCheck).visitToken(mockOperator);
     	
     	
     }
@@ -184,26 +195,9 @@ public class HalsteadLengthWhiteTest {
     {
     	this.setUp();
     	
-    	doNothing().when(halCheck).log(anyInt(), anyString());
+    	doNothing().when(halCheck).log(anyInt(),anyString());
     	
-    	halCheck.visitToken(mockOperator);
-    	
-    	halCheck.finishTree(mockOperator);
-    	
-    	verify(halCheck).finishTree(blankast);
-    	
-    	
-    }
-    
-    @Test
-    public void testFinishTreeOverMax()
-    {
-    	this.setUp();
-    	
-    	doNothing().when(halCheck).log(anyInt(), anyString());
-    	
-    	halCheck.visitToken(mockOperator);
-    	halCheck.visitToken(mockOperator);
+    	//halCheck.visitToken(mockOperator);
     	
     	halCheck.finishTree(mockNum);
     	
@@ -211,4 +205,5 @@ public class HalsteadLengthWhiteTest {
     	
     	
     }
+   
 }

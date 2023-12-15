@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-public class NumberOfLinesOfComments extends AbstractCheck {
+public class NumberOfLinesOfCommentsCheck extends AbstractCheck {
 	
 	private static final String MSG_KEY = "comments";
     
     private int howManyCommentLines = 0;
     
+    public int GetResult() { return howManyCommentLines; }
     
     private int[] commentTokens = new int[] {
     		
@@ -41,6 +42,11 @@ public class NumberOfLinesOfComments extends AbstractCheck {
         return getDefaultTokens();
     }
 
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyCommentLines = 0;
+    }
+    
     // VISIT TOKEN ACTIONS
     @Override
     public void visitToken(DetailAST ast) 
@@ -49,7 +55,7 @@ public class NumberOfLinesOfComments extends AbstractCheck {
     		if (ast.getType() == TokenTypes.SINGLE_LINE_COMMENT)
     		{
     			howManyCommentLines++;
-                log(ast, ast.getType() + "single line comment found in code");
+                //log(ast, ast.getType() + "single line comment found in code");
     		}
     		else if (ast.getType() == TokenTypes.COMMENT_CONTENT)
     		{
@@ -72,7 +78,7 @@ public class NumberOfLinesOfComments extends AbstractCheck {
     			}
     			
     			howManyCommentLines += linesInComment;
-    			log(ast, ast.getType() + "multi line comment found in code found");
+    			//log(ast, ast.getType() + "multi line comment found in code found");
     		}
     		
     		
@@ -80,9 +86,9 @@ public class NumberOfLinesOfComments extends AbstractCheck {
     
     @Override
     public void finishTree(DetailAST ast) {
-    	
+    	String message = "Operands found in code: " + howManyCommentLines;
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operands found in code: " + howManyCommentLines, howManyCommentLines);
+        log(howManyCommentLines, message);
         
     }
 	

@@ -14,6 +14,8 @@ private static final String MSG_KEY = "comments";
     
     private int howManyCommentsCheck = 0;
     
+    public int GetResult() {return howManyCommentsCheck; }
+    
     private int[] commentTokens = new int[] {
     		
     		TokenTypes.SINGLE_LINE_COMMENT,
@@ -40,6 +42,11 @@ private static final String MSG_KEY = "comments";
         return getDefaultTokens();
     }
 
+    @Override
+    public void beginTree(DetailAST ast) {
+    	this.howManyCommentsCheck = 0;
+    }
+    
     // VISIT TOKEN ACTIONS
     @Override
     public void visitToken(DetailAST ast) 
@@ -49,7 +56,7 @@ private static final String MSG_KEY = "comments";
     			if (ast.getType() == commentTokens[i])
     			{
     				howManyCommentsCheck++;
-    	            log(ast, ast.getType() + " operand found in code!");
+    	            //log(ast, ast.getType() + " operand found in code!");
     			}
     		}
     		
@@ -58,8 +65,10 @@ private static final String MSG_KEY = "comments";
     @Override
     public void finishTree(DetailAST ast) {
     	
+    	String message = "Comments found in code: " + howManyCommentsCheck;
+    	
         // Report the count as needed, or use it for other purposes
-        log(ast, "Operands found in code: " + howManyCommentsCheck, howManyCommentsCheck);
+        log( howManyCommentsCheck, message);
         
     }
 	
