@@ -74,3 +74,5 @@ The only loops that we check for are FOR loops, WHILE loops, and DO WHILE loops.
 Assumptions made for lines of comments:
 
 One of the assumptions we made was that /* */ themselves would not be accepted as lines of comments. This does not apply to SINGLE comments, since we will assume if the user used a single empty comment it was meant to be recognized as a line (for whatever reason). New lines will be recognized by the \\n (as specified in online java docs) from within the comment content. This may result in unusual results if user entered \\n themselves (which is unlikely)
+
+A note about unusual test cases: some test cases, you may notice, will say SINGLE but will expect multiple results, in for example, some of the op tests. This is as intended. Certain elements were necesary to get and ended up being counted as operands because of our wide range of things counted as such. Therefor, in some cases, we were forced to compromise. Please know that when tests pass, it is because they are working as intended, even if their expected outputs may seem a bit unusual. 
