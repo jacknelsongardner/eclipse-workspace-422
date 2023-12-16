@@ -11,7 +11,7 @@ public class OpManyBlackTest {
         int divisionResult = a / b; // 2 operators (a, b) and 1 operator (/)
         int moduloResult = a % b;   // 2 operators (a, b) and 1 operator (%)
 
-        // Relational Operators
+        // Relational Operators 
         boolean isEqual = (a == b); // 2 operators (a, b) and 1 operator (==)
         boolean isNotEqual = (a != b); // 2 operators (a, b) and 1 operator (!=)
 
