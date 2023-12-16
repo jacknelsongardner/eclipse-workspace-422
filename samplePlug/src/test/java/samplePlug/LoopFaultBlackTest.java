@@ -6,6 +6,5 @@ public class LoopFaultBlackTest {
         String a = "while (true) {}";
         // while (true) {}
         
-        
     }
 }
